@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Georgia', serif;
-    color: #333;
+    color: #2C1B33;
     background-color: #fff;
 }
 
@@ -23,7 +23,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #2c2c2c;
+    background-color: #4A2545;
     color: white;
 }
 
@@ -31,6 +31,8 @@ nav {
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
 }
 
 nav ul {
@@ -40,13 +42,13 @@ nav ul {
 }
 
 nav ul a {
-    color: white;
+    color: #F0D6E8;
     text-decoration: none;
     font-size: 16px;
 }
 
 nav ul a:hover {
-    color: #c8a96e;
+    color: #F4AACC;
 }
 
 /* =====================
@@ -54,66 +56,186 @@ nav ul a:hover {
    ===================== */
 
 .hero {
-    background-color: #f5f0eb;
+    background: linear-gradient(135deg, #F5E6F5, #EDD6F0);
     text-align: center;
     padding: 100px 40px;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px;
     margin-bottom: 16px;
-    color: #2c2c2c;
+    color: #4A2545;
 }
 
 .hero h2 {
     font-size: 22px;
     font-weight: normal;
     margin-bottom: 20px;
-    color: #555;
+    color: #6B3D6B;
 }
 
 .hero p {
     font-size: 18px;
     margin-bottom: 40px;
-    color: #666;
+    color: #7A4F7A;
 }
 
 /* NUPP */
 .nupp {
-    background-color: #c8a96e;
+    background-color: #C06B9A;
     color: white;
-    padding: 14px 32px;
+    padding: 14px 36px;
     text-decoration: none;
     font-size: 18px;
-    border-radius: 4px;
+    border-radius: 30px;
+    display: inline-block;
 }
 
 .nupp:hover {
-    background-color: #a8893e;
+    background-color: #A0527E;
 }
 
 /* =====================
-   TUTVUSTUS
+   JAOTISED (sections)
    ===================== */
 
-.tutvustus {
-    max-width: 800px;
+.jaotis {
+    max-width: 900px;
     margin: 60px auto;
     padding: 0 40px;
     text-align: center;
 }
 
-.tutvustus h2 {
-    font-size: 32px;
+.jaotis h2 {
+    font-size: 34px;
     margin-bottom: 24px;
-    color: #2c2c2c;
+    color: #4A2545;
 }
 
-.tutvustus p {
+.jaotis p {
     font-size: 18px;
     line-height: 1.8;
-    color: #555;
+    color: #5C3D5C;
     margin-bottom: 16px;
+}
+
+/* KAARDID (nt teenused) */
+.kaardid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.kaart {
+    background-color: #F8EEF8;
+    border: 1px solid #E0C0E0;
+    border-radius: 12px;
+    padding: 32px 28px;
+    width: 260px;
+    text-align: center;
+}
+
+.kaart h3 {
+    font-size: 22px;
+    color: #4A2545;
+    margin-bottom: 12px;
+}
+
+.kaart p {
+    font-size: 16px;
+    color: #6B3D6B;
+    line-height: 1.7;
+}
+
+/* ROOSA TAUSTAGA RIBA */
+.riba {
+    background-color: #F5E6F5;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.riba h2 {
+    font-size: 34px;
+    color: #4A2545;
+    margin-bottom: 20px;
+}
+
+.riba p {
+    font-size: 18px;
+    color: #6B3D6B;
+    max-width: 700px;
+    margin: 0 auto 16px auto;
+    line-height: 1.8;
+}
+
+/* KONTAKTVORM */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: #4A2545;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #C9A0C9;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+    background-color: #FDF5FD;
+}
+
+form textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #C06B9A;
+    color: white;
+    border: none;
+    padding: 14px 36px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #A0527E;
+}
+
+/* =====================
+   LEHE PEALKIRI
+   ===================== */
+
+.lehe-pealkiri {
+    background: linear-gradient(135deg, #F5E6F5, #EDD6F0);
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.lehe-pealkiri h1 {
+    font-size: 42px;
+    color: #4A2545;
+}
+
+.lehe-pealkiri p {
+    font-size: 18px;
+    color: #6B3D6B;
+    margin-top: 12px;
 }
 
 /* =====================
@@ -123,7 +245,7 @@ nav ul a:hover {
 footer {
     text-align: center;
     padding: 30px;
-    background-color: #2c2c2c;
-    color: #aaa;
+    background-color: #4A2545;
+    color: #D4A8D4;
     font-size: 14px;
 }

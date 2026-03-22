@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treeni minuga — Katrin Kreutzberg</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="index.html">Katrin Kreutzberg</a>
+        <ul>
+            <li><a href="minust.html">Minust</a></li>
+            <li><a href="treeningkavad.html">Treeningkavad</a></li>
+            <li><a href="koolitused.html">Koolitused</a></li>
+            <li><a href="blogi.html">Blogi</a></li>
+            <li><a href="treeni-minuga.html">Treeni minuga</a></li>
+        </ul>
+    </nav>
+
+    <section class="lehe-pealkiri">
+        <h1>Treeni minuga</h1>
+        <p>Võta esimene samm — kirjuta mulle!</p>
+    </section>
+
+    <!-- KONTAKTANDMED -->
+    <section class="jaotis">
+        <h2>Kontaktandmed</h2>
+        <p>E-post: <a href="mailto:sinu@email.ee" style="color: #C06B9A;">sinu@email.ee</a></p>
+        <p>Telefon: <a href="tel:+372XXXXXXXX" style="color: #C06B9A;">+372 XXX XXXX</a></p>
+        <p>Instagram: <a href="https://instagram.com/sinuprofiil" target="_blank" style="color: #C06B9A;">@sinuprofiil</a></p>
+    </section>
+
+    <!-- KONTAKTVORM -->
+    <section class="riba">
+        <h2>Saada mulle sõnum</h2>
+        <p>Täida vorm ja vastan sulle esimesel võimalusel.</p>
+        <br>
+        <form action="https://formspree.io/f/SINU-KOOD" method="POST">
+            <label for="nimi">Sinu nimi</label>
+            <input type="text" id="nimi" name="nimi" placeholder="Sinu nimi" required>
+
+            <label for="email">E-posti aadress</label>
+            <input type="email" id="email" name="email" placeholder="sinu@email.ee" required>
+
+            <label for="teema">Teema</label>
+            <input type="text" id="teema" name="teema" placeholder="Milles saan aidata?">
+
+            <label for="sonnum">Sõnum</label>
+            <textarea id="sonnum" name="sonnum" placeholder="Kirjuta oma küsimusest või soovist..." required></textarea>
+
+            <button type="submit">Saada sõnum</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Katrin Kreutzberg · Personaaltreener</p>
+    </footer>
+
+</body>
+</html>
