@@ -47,29 +47,47 @@
     <section class="loendur-sektsioon">
         <h2 class="mang-pealkiri">MITU KÜKKI SA SUUDAD 10 SEKUNDIGA TEHA?</h2>
 
-        <div id="mangEkraan" class="mang-ekraan">
-            <button class="alusta-nupp" onclick="alustaMang()">ALUSTA MÄNGU</button>
-        </div>
+        <div class="mang-paigutus">
 
-        <div id="mangAktiivne" class="mang-aktiivne" style="display:none;">
-            <div class="mang-info">
-                <span class="countdown-kast">⏱ <span id="countdown">10</span>s</span>
-                <span class="loendur-arv"><span id="loendur">0</span> kükki</span>
-            </div>
-            <div class="loendur-kast">
-                <button class="kyki-nupp" onclick="loendaKykk()">🏋️ Tee küki!</button>
-                <div id="inimene" class="inimene">🧍‍♀️</div>
-            </div>
-        </div>
+            <!-- MÄNG -->
+            <div class="mang-pool">
+                <div id="mangEkraan" class="mang-ekraan">
+                    <button class="alusta-nupp" onclick="alustaMang()">ALUSTA MÄNGU</button>
+                </div>
 
-        <div id="tulemusEkraan" class="tulemus-ekraan" style="display:none;">
-            <p class="tulemus-tekst">Sinu tulemus: <span id="lopptulemus"></span> kükki! 🎉</p>
-            <button class="alusta-nupp" onclick="laeManguUuesti()">MÄNGI UUESTI</button>
+                <div id="mangAktiivne" class="mang-aktiivne" style="display:none;">
+                    <div class="mang-info">
+                        <span class="countdown-kast">⏱ <span id="countdown">10</span>s</span>
+                        <span class="loendur-arv"><span id="loendur">0</span> kükki</span>
+                    </div>
+                    <div class="loendur-kast">
+                        <button class="kyki-nupp" onclick="loendaKykk()">🏋️ Tee küki!</button>
+                        <div id="inimene" class="inimene">🧍‍♀️</div>
+                    </div>
+                </div>
+
+                <div id="tulemusEkraan" class="tulemus-ekraan" style="display:none;">
+                    <p class="tulemus-tekst">Sinu tulemus: <span id="lopptulemus"></span> kükki! 🎉</p>
+                    <div class="nimi-kast">
+                        <input type="text" id="nimiSisend" class="nimi-sisend" placeholder="Sinu nimi" maxlength="20">
+                        <button class="alusta-nupp" onclick="salvestaTulemus()">SALVESTA</button>
+                    </div>
+                    <button class="uuesti-nupp" onclick="laeManguUuesti()">MÄNGI UUESTI</button>
+                </div>
+            </div>
+
+            <!-- EDETABEL -->
+            <div class="edetabel-pool">
+                <h3 class="edetabel-pealkiri">🏆 EDETABEL</h3>
+                <ol id="edetabel" class="edetabel-nimekiri"></ol>
+            </div>
+
         </div>
     </section>
 
     <script>
         var timer = null;
+        var viimaneSkoor = 0;
 
         function alustaMang() {
             document.getElementById('mangEkraan').style.display = 'none';
@@ -101,17 +119,51 @@
         }
 
         function lopetaMang() {
-            var tulemus = document.getElementById('loendur').innerText;
-            document.getElementById('lopptulemus').innerText = tulemus;
+            viimaneSkoor = parseInt(document.getElementById('loendur').innerText);
+            document.getElementById('lopptulemus').innerText = viimaneSkoor;
+            document.getElementById('nimiSisend').value = '';
             document.getElementById('mangAktiivne').style.display = 'none';
             document.getElementById('tulemusEkraan').style.display = 'block';
             timer = null;
+        }
+
+        function salvestaTulemus() {
+            var nimi = document.getElementById('nimiSisend').value.trim();
+            if (!nimi) { nimi = 'Anonüümne'; }
+
+            var tulemused = JSON.parse(localStorage.getItem('kykiTulemused') || '[]');
+            tulemused.push({ nimi: nimi, skoor: viimaneSkoor });
+            tulemused.sort(function(a, b) { return b.skoor - a.skoor; });
+            tulemused = tulemused.slice(0, 10);
+            localStorage.setItem('kykiTulemused', JSON.stringify(tulemused));
+
+            uuendaEdetabel();
+            document.getElementById('nimiSisend').disabled = true;
+            document.querySelector('.nimi-kast .alusta-nupp').disabled = true;
+        }
+
+        function uuendaEdetabel() {
+            var tulemused = JSON.parse(localStorage.getItem('kykiTulemused') || '[]');
+            var nimekiri = document.getElementById('edetabel');
+            nimekiri.innerHTML = '';
+            if (tulemused.length === 0) {
+                nimekiri.innerHTML = '<li class="edetabel-tühi">Veel tulemusi pole</li>';
+                return;
+            }
+            tulemused.forEach(function(kirje) {
+                var li = document.createElement('li');
+                li.className = 'edetabel-rida';
+                li.innerHTML = '<span class="edetabel-nimi">' + kirje.nimi + '</span><span class="edetabel-skoor">' + kirje.skoor + ' kükki</span>';
+                nimekiri.appendChild(li);
+            });
         }
 
         function laeManguUuesti() {
             document.getElementById('tulemusEkraan').style.display = 'none';
             document.getElementById('mangEkraan').style.display = 'block';
         }
+
+        uuendaEdetabel();
     </script>
 
     <!-- JALUS -->

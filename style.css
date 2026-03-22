@@ -163,6 +163,97 @@ nav ul a:hover {
     color: #5C2D6E;
 }
 
+.mang-paigutus {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.mang-pool {
+    min-width: 280px;
+}
+
+.edetabel-pool {
+    min-width: 240px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(92, 45, 110, 0.1);
+}
+
+.edetabel-pealkiri {
+    font-size: 18px;
+    color: #5C2D6E;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.edetabel-nimekiri {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.edetabel-rida {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #EDE0F5;
+    font-size: 15px;
+    color: #333;
+}
+
+.edetabel-nimi {
+    font-weight: 600;
+    color: #5C2D6E;
+}
+
+.edetabel-skoor {
+    color: #D4638A;
+}
+
+.edetabel-tühi {
+    list-style: none;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.nimi-kast {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.nimi-sisend {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #D4638A;
+    border-radius: 4px;
+    outline: none;
+    width: 180px;
+}
+
+.uuesti-nupp {
+    background: none;
+    border: 2px solid #5C2D6E;
+    color: #5C2D6E;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.uuesti-nupp:hover {
+    background-color: #EDE0F5;
+}
+
 .alusta-nupp {
     background-color: #5C2D6E;
     color: white;
