@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katrin Kreutzberg — Personaaltreener</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATSIOON -->
+    <nav>
+        <div class="logo">Katrin Kreutzberg</div>
+        <ul>
+            <li><a href="minust.html">Minust</a></li>
+            <li><a href="treeningkavad.html">Treeningkavad</a></li>
+            <li><a href="koolitused.html">Koolitused</a></li>
+            <li><a href="treeni-minuga.html">Treeni minuga</a></li>
+        </ul>
+    </nav>
+
+    <!-- PEAJAOTIS (hero) -->
+    <section class="hero">
+        <h1>Tere tulemast!</h1>
+        <h2>Olen Katrin — personaaltreener ja tervislik eluviis on minu kirg.</h2>
+        <p>Aitan sul liikuda, ennast hästi tunda ja jõuda oma eesmärkideni.</p>
+        <a href="teenused.html" class="nupp">Vaata teenuseid</a>
+    </section>
+
+    <!-- LÜHITUTVUSTUS -->
+    <section class="tutvustus">
+        <h2>Minust</h2>
+        <p>
+            Olen personaaltreener, kes usub, et iga inimene suudab olla oma parima versiooni.
+            Minu lähenemine on praktiline, toetav ja sulle isiklikult kohandatud.
+        </p>
+        <p>
+            Olenemata sellest, kas soovid kaalust alla võtta, lihaseid kasvatada või lihtsalt
+            end paremini tunda — olen siin, et sind aidata.
+        </p>
+    </section>
+
+    <!-- KÜKIKULOENDUR -->
+    <section class="loendur-sektsioon">
+        <p class="loendur-tekst">Tee kaasa!</p>
+        <div class="loendur-kast">
+            <button class="kyki-nupp" onclick="loendaKykk()">🏋️ Tee küki!</button>
+            <div id="inimene" class="inimene">🧍‍♀️</div>
+            <span class="loendur-arv"><span id="loendur">0</span> kükki</span>
+        </div>
+    </section>
+
+    <script>
+        function loendaKykk() {
+            var arv = parseInt(document.getElementById('loendur').innerText);
+            document.getElementById('loendur').innerText = arv + 1;
+
+            var inimene = document.getElementById('inimene');
+            inimene.classList.remove('kykk-animatsioon');
+            void inimene.offsetWidth; // taaskäivitab animatsiooni
+            inimene.classList.add('kykk-animatsioon');
+        }
+    </script>
+
+    <!-- JALUS -->
+    <footer>
+        <p>© 2026 Katrin Kreutzberg · Personaaltreener</p>
+    </footer>
+
+</body>
+</html>

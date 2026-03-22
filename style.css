@@ -1,0 +1,192 @@
+/* =====================
+   ÜLDISED SEADED
+   ===================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* =====================
+   NAVIGATSIOON
+   ===================== */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #5C2D6E;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+nav ul a:hover {
+    color: #E896B8;
+}
+
+/* =====================
+   PEAJAOTIS (HERO)
+   ===================== */
+
+.hero {
+    background-color: #EDE0F5;
+    text-align: center;
+    padding: 100px 40px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #2c2c2c;
+}
+
+.hero h2 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* NUPP */
+.nupp {
+    background-color: #D4638A;
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.nupp:hover {
+    background-color: #B84D74;
+}
+
+/* =====================
+   TUTVUSTUS
+   ===================== */
+
+.tutvustus {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.tutvustus h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #2c2c2c;
+}
+
+.tutvustus p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+/* =====================
+   KÜKIKULOENDUR
+   ===================== */
+
+.loendur-sektsioon {
+    text-align: center;
+    padding: 50px 40px;
+    background-color: #f9f4fc;
+}
+
+.loendur-tekst {
+    font-size: 20px;
+    color: #5C2D6E;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.loendur-kast {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.kyki-nupp {
+    background-color: #D4638A;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.kyki-nupp:hover {
+    background-color: #B84D74;
+}
+
+.loendur-arv {
+    font-size: 22px;
+    font-weight: 600;
+    color: #5C2D6E;
+}
+
+.inimene {
+    font-size: 48px;
+    display: inline-block;
+    transform-origin: bottom center;
+}
+
+@keyframes kykk {
+    0%   { transform: scaleY(1) translateY(0); }
+    30%  { transform: scaleY(0.55) translateY(10px); }
+    60%  { transform: scaleY(0.55) translateY(10px); }
+    100% { transform: scaleY(1) translateY(0); }
+}
+
+.kykk-animatsioon {
+    animation: kykk 0.6s ease;
+}
+
+/* =====================
+   JALUS (FOOTER)
+   ===================== */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #5C2D6E;
+    color: #E8D5F0;
+    font-size: 14px;
+}
