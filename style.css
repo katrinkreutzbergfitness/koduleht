@@ -128,11 +128,12 @@ nav ul a:hover {
     background-color: #f9f4fc;
 }
 
-.loendur-tekst {
-    font-size: 20px;
+.mang-pealkiri {
+    font-size: 28px;
     color: #5C2D6E;
-    margin-bottom: 20px;
-    font-weight: 600;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .loendur-kast {
@@ -160,6 +161,52 @@ nav ul a:hover {
     font-size: 22px;
     font-weight: 600;
     color: #5C2D6E;
+}
+
+.alusta-nupp {
+    background-color: #5C2D6E;
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.alusta-nupp:hover {
+    background-color: #7A3D8E;
+}
+
+.mang-ekraan, .tulemus-ekraan {
+    text-align: center;
+}
+
+.mang-aktiivne {
+    text-align: center;
+}
+
+.mang-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 24px;
+}
+
+.countdown-kast {
+    font-size: 28px;
+    font-weight: 700;
+    color: #D4638A;
+}
+
+.tulemus-tekst {
+    font-size: 26px;
+    font-weight: 600;
+    color: #5C2D6E;
+    margin-bottom: 24px;
 }
 
 .inimene {

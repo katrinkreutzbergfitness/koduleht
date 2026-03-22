@@ -43,25 +43,74 @@
         </p>
     </section>
 
-    <!-- KÜKIKULOENDUR -->
+    <!-- KÜKIMÄNG -->
     <section class="loendur-sektsioon">
-        <p class="loendur-tekst">Tee kaasa!</p>
-        <div class="loendur-kast">
-            <button class="kyki-nupp" onclick="loendaKykk()">🏋️ Tee küki!</button>
-            <div id="inimene" class="inimene">🧍‍♀️</div>
-            <span class="loendur-arv"><span id="loendur">0</span> kükki</span>
+        <h2 class="mang-pealkiri">MITU KÜKKI SA SUUDAD 10 SEKUNDIGA TEHA?</h2>
+
+        <div id="mangEkraan" class="mang-ekraan">
+            <button class="alusta-nupp" onclick="alustaMang()">ALUSTA MÄNGU</button>
+        </div>
+
+        <div id="mangAktiivne" class="mang-aktiivne" style="display:none;">
+            <div class="mang-info">
+                <span class="countdown-kast">⏱ <span id="countdown">10</span>s</span>
+                <span class="loendur-arv"><span id="loendur">0</span> kükki</span>
+            </div>
+            <div class="loendur-kast">
+                <button class="kyki-nupp" onclick="loendaKykk()">🏋️ Tee küki!</button>
+                <div id="inimene" class="inimene">🧍‍♀️</div>
+            </div>
+        </div>
+
+        <div id="tulemusEkraan" class="tulemus-ekraan" style="display:none;">
+            <p class="tulemus-tekst">Sinu tulemus: <span id="lopptulemus"></span> kükki! 🎉</p>
+            <button class="alusta-nupp" onclick="laeManguUuesti()">MÄNGI UUESTI</button>
         </div>
     </section>
 
     <script>
+        var timer = null;
+
+        function alustaMang() {
+            document.getElementById('mangEkraan').style.display = 'none';
+            document.getElementById('tulemusEkraan').style.display = 'none';
+            document.getElementById('loendur').innerText = '0';
+            document.getElementById('countdown').innerText = '10';
+            document.getElementById('mangAktiivne').style.display = 'block';
+
+            var aeg = 10;
+            timer = setInterval(function() {
+                aeg--;
+                document.getElementById('countdown').innerText = aeg;
+                if (aeg <= 0) {
+                    clearInterval(timer);
+                    lopetaMang();
+                }
+            }, 1000);
+        }
+
         function loendaKykk() {
+            if (!timer) return;
             var arv = parseInt(document.getElementById('loendur').innerText);
             document.getElementById('loendur').innerText = arv + 1;
 
             var inimene = document.getElementById('inimene');
             inimene.classList.remove('kykk-animatsioon');
-            void inimene.offsetWidth; // taaskäivitab animatsiooni
+            void inimene.offsetWidth;
             inimene.classList.add('kykk-animatsioon');
+        }
+
+        function lopetaMang() {
+            var tulemus = document.getElementById('loendur').innerText;
+            document.getElementById('lopptulemus').innerText = tulemus;
+            document.getElementById('mangAktiivne').style.display = 'none';
+            document.getElementById('tulemusEkraan').style.display = 'block';
+            timer = null;
+        }
+
+        function laeManguUuesti() {
+            document.getElementById('tulemusEkraan').style.display = 'none';
+            document.getElementById('mangEkraan').style.display = 'block';
         }
     </script>
 
